@@ -1,8 +1,6 @@
-# TOC Project 2017
+# ExRateBot_telegram
 
-Template Code for TOC Project 2017
-
-A telegram bot based on a finite state machine
+A telegram bot based on a finite state machine which can search exchange rate and calculate the exchanging result.
 
 ## Setup
 
@@ -28,7 +26,7 @@ You can either setup https server or using `ngrok` as a proxy.
 **`ngrok` would be used in the following instruction**
 
 ```sh
-ngrok http 5000
+./ngrok http 5000
 ```
 
 After that, `ngrok` would generate a https URL.
@@ -45,19 +43,15 @@ python3 app.py
 ![fsm](./img/show-fsm.png)
 
 ## Usage
-The initial state is set to `user`.
+The initial state is set to `init`, it will goto `start` state whne press start button.
+The bot has 4 section in main menu:
+1. Best exchange rate: can search the best exchange rate and bank name of TWD to another currency.
+2. All exchange rate: can search exchange rate in all of the banks.
+3. Calculate: can calculate TWD to another currency or another currency to TWD with the best bank exchange rate or a Specified bank exchage rate.
+4. About: there ara help instruction, some knowledge of exchanging, reference, and author information. 
 
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
+You just need to press the blue words on screen instead of enter message.
+(Calculate section still need to enter the number of money.)
 
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
-
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
-
-
-## Author
-[Lee-W](https://github.com/Lee-W)
-# ExRateBot_telegram
-# ExRateBot_telegram
+## Reference
+Template Code for TOC Project 2017 Author: [Lee-W](https://github.com/Lee-W)
